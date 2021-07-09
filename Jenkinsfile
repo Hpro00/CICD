@@ -12,14 +12,13 @@ pipeline {
         gradle
     }    
     environment {
-        Version = 'v2207'
         Author = 'BoHieu'
     }
     stages {
         stage("build") {
             steps {
                 echo "Start Building GoD..."
-                echo "Building Version: ${Version}"
+                echo "Building Version: ${params.VERSION}"
                 echo "Author: ${Author}"
             }
         }
@@ -29,14 +28,14 @@ pipeline {
             }    
             steps {
                 echo "Start Testing GoD..."
-                echo "Testing Version: ${Version}"
+                echo "Testing Version: ${params.VERSION}"
                 echo "Author: ${Author}"
             }
         }
         stage("deploy") {
             steps {
                 echo "Start Deploying GoD..."
-                echo "Deploying Version: ${Version}"
+                echo "Deploying Version: ${params.VERSION}"
                 echo "Author: ${Author}"
             }
         }
