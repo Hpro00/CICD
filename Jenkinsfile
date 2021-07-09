@@ -4,7 +4,6 @@ pipeline {
     parameters { 
         choice(name: 'VERSION',choices: ['v2.7', 'v7.5', 'v5.2', 'v2.0', 'v0.1'], descrition: 'Xiu')
         booleanParam(name: 'Test', defaultValue: true, description: 'Make it Simple')    
-    
     }
     tools {
         maven
@@ -25,6 +24,9 @@ pipeline {
         stage("test") {
             when {
                BRANCH_NAME == 'Hpro00-patch-1'   
+                expression {
+                    params.Test
+                }
             }    
             steps {
                 echo "Start Testing GoD..."
