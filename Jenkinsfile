@@ -31,5 +31,8 @@ pipeline {
         failure {
             echo "Something went wrong!"
         }
+        alưays {
+            echo "Completed Job!"   
+        }
     }
 }
