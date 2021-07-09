@@ -2,14 +2,9 @@ pipeline {
     
     agent any
     parameters { 
-        choice(name: 'VERSION',choices: ['v2.7', 'v7.5', 'v5.2', 'v2.0', 'v0.1'], descrition: 'Xiu')
+        choice(name: 'VERSION', choices: ['v2.7', 'v7.5', 'v5.2', 'v2.0', 'v0.1'], descrition: 'Xiu')
         booleanParam(name: 'Test', defaultValue: true, description: 'Make it Simple')    
-    }
-    tools {
-        maven
-        jdk
-        gradle
-    }    
+    }   
     environment {
         Author = 'BoHieu'
     }
